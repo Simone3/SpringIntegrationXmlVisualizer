@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<!-- Info -->
+		<meta charset="UTF-8">
+		<title>Spring Integration XML Visualizer</title>
+		
+		<!-- Styles -->
+		<link href="import/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="import/sweetalert2/sweetalert2.min.css">
+		<link rel="stylesheet" href="import/highlightjs/default.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	
+		<!-- JavaScript -->
+		<script src="import/mermaid/mermaid.min.js"></script>
+		<script src="import/sweetalert2/sweetalert2.min.js"></script>
+		<script src="import/highlightjs/highlight.min.js"></script>
+		<script src="import/panzoom/panzoom.min.js"></script>
+		<script src="js/view.js"></script>
+		<script src="js/xml-processor.js"></script>
+		<script src="js/graph-builder.js"></script>
+		<script src="js/main.js"></script>
+	
+	</head>
+	
+	<body>
+
+		<div class="container-fluid m-0 p-0">
+
+			<div id="xml-section" class="container-fluid m-0 p-3">
+
+				<h3>Input XMLs</h3>
+				<div>Copy here the main Spring Integration XML, optionally with its dependencies (one XML per input): <button id="add-xml-input" class="btn btn-sm btn-success" onClick="onAddXmlInputClick()">+</button></div>
+
+				<div id="xml-textareas-container" class="row m-0 row-cols-3">
+					<div id="first-xml-textarea-container" class="col p-2">
+						<textarea class="xml-textarea container-fluid" placeholder="Paste one XML here"></textarea>
+					</div>
+				</div>
+
+			</div>
+			
+			<div id="commands-section" class="container-fluid m-0 p-3">
+
+				<h3>Commands</h3>
+
+				<div id="extra-inputs-container" class="container-fluid m-0 p-0 mb-2" style="display: none">
+					<div class="container-fluid m-0 p-0 mb-2">Select one or more methods to display and then click "Process XMLs" again:</div>
+					<div class="container-fluid m-0 p-0">
+						<select id="methods-selection-container" name="methods-selection-container" multiple></select>
+					</div>
+				</div>
+
+				<button id="process" class="btn btn-success" onClick="onProcessClick()">Process XMLs</button>
+			
+			</div>
+
+			<div id="errors-section" class="container-fluid text-danger m-0 p-3" style="display: none">
+
+				<h3>Errors</h3>
+
+				<ul id="errors-container"></ul>
+
+			</div>
+
+			<div id="warnings-section" class="container-fluid text-warning m-0 p-3" style="display: none">
+
+				<h3>Warnings</h3>
+
+				<ul id="warnings-container"></ul>
+				
+			</div>
+
+			<div id="graph-section" class="container-fluid m-0 p-3" style="display: none">
+
+				<h3>Mermaid Graph</h3>
+				<div class="container-fluid m-0 p-0 mb-2">This is the Mermaid graph corresponding to the Spring Integration XMLs. You can:
+					<ul>
+						<li>Zoom with Alt + scroll (Option + scroll on Mac) or with +/- keys</li>
+						<li>Pan by dragging with the mouse or with arrow keys</li>
+						<li>Click on each node to see its full definition</li>
+					</ul>
+				</div>
+				
+				<div id="graph-container" class="mermaid"></div>
+
+			</div>
+			
+			<div id="graph-source-section" class="container-fluid m-0 p-3" style="display: none">
+
+				<h3>Mermaid Graph Source</h3>
+				<div class="container-fluid m-0 p-0 mb-2">This is the source code of the Mermaid graph:</div>
+				
+				<div id="graph-source-container"></div>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,71 @@
+
+#xml-textareas-container {
+
+	margin-left: -0.5em !important;
+	margin-right: -0.5em !important;
+}
+
+#xml-textareas-container textarea {
+
+	resize: none;
+}
+
+.swal2-html-container {
+
+	text-align: left !important;
+}
+
+#graph-container {
+
+	overflow: hidden;
+	border: 2px solid black;
+}
+
+.mermaid svg {
+	
+	height: auto;
+}
+
+.node-not-found > rect {
+
+	fill: red !important;
+	stroke: red !important;
+}
+
+.node-not-found > .label {
+
+	color: yellow !important;
+}
+
+.node-method > rect {
+
+	fill: #b3e0ff !important;
+	stroke: blue !important;
+}
+
+.node-transformer > rect,
+.node-splitter > rect,
+.node-aggregator > rect,
+.node-header-enricher > rect {
+
+	fill: #dcdcdc !important;
+	stroke: grey !important;
+}
+
+.node-chain > rect {
+
+	fill: #dda0dd !important;
+	stroke: purple !important;
+}
+
+.node-service-activator > rect {
+
+	fill: #ffd9b3 !important;
+	stroke: orange !important;
+}
+
+.node-router > rect {
+
+	fill: #b3ffb3 !important;
+	stroke: green !important;
+}
